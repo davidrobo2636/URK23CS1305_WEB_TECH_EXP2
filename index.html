@@ -2,89 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cybersecurity Basics Registration</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <title>Cybersecurity Basics - Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-  <div class="container">
-    <h1>Cybersecurity Basics Registration</h1>
-    <form id="registrationForm" action="/serverlogic" method="post">
-      <fieldset>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+  <div class="container" style="max-width: 700px; margin: auto;">
+    <h1>Cybersecurity Basics - Online Registration</h1>
+
+    <form id="registrationForm">
+      <fieldset style="margin-bottom: 20px;">
         <legend>Personal Information</legend>
 
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus>
+        <div style="margin-bottom: 10px;">
+          <label for="fullname">Full Name</label><br>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus maxlength="50">
+        </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <div style="margin-bottom: 10px;">
+          <label for="email">Email Address</label><br>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter password" required minlength="6">
+        <div style="margin-bottom: 10px;">
+          <label for="password">Password</label><br>
+          <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+        </div>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+        <div style="margin-bottom: 10px;">
+          <label for="phone">Phone Number</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
+        <div style="margin-bottom: 10px;">
+          <label for="dob">Date of Birth</label><br>
+          <input type="date" id="dob" name="dob" required>
+        </div>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="13" max="100" required>
-
-        <label for="website">Portfolio URL:</label>
-        <input type="url" id="website" name="website" placeholder="https://example.com">
-
-        <label for="search">Search Field:</label>
-        <input type="search" id="search" name="search" placeholder="Search your skills" required>
-
-        <label for="fileupload">Upload Resume:</label>
-        <input type="file" id="fileupload" name="fileupload" required>
+        <div style="margin-bottom: 10px;">
+          <label for="age">Age</label><br>
+          <input type="number" id="age" name="age" min="10" max="100" required>
+        </div>
       </fieldset>
 
-      <fieldset>
-        <legend>Track Selection</legend>
-        <label><input type="radio" name="track" value="Beginner" required class="progress-input"> Beginner</label>
-        <label><input type="radio" name="track" value="Advanced" class="progress-input"> Advanced</label>
+      <fieldset style="margin-bottom: 20px;">
+        <legend>Preferences</legend>
+
+        <div style="margin-bottom: 10px;">
+          <label for="website">Portfolio URL</label><br>
+          <input type="url" id="website" name="website" placeholder="https://yourportfolio.com">
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="search">Search Interests</label><br>
+          <input type="search" id="search" name="search" placeholder="Search Cybersecurity Topics">
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="fileupload">Upload ID Proof</label><br>
+          <input type="file" id="fileupload" name="fileupload" accept=".pdf,image/*" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label>Choose your track</label><br>
+          <input type="radio" id="track1" name="track" value="Beginner" required>
+          <label for="track1">Beginner</label>
+          <input type="radio" id="track2" name="track" value="Advanced">
+          <label for="track2">Advanced</label>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label>Skills you have</label><br>
+          <input type="checkbox" id="skill1" name="skill1" value="Networking">
+          <label for="skill1">Networking</label>
+          <input type="checkbox" id="skill2" name="skill2" value="Cryptography">
+          <label for="skill2">Cryptography</label>
+          <input type="checkbox" id="skill3" name="skill3" value="PenTesting">
+          <label for="skill3">Pen Testing</label>
+          <input type="checkbox" id="skill4" name="skill4" value="Malware Analysis">
+          <label for="skill4">Malware Analysis</label>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="experience">Your Experience</label><br>
+          <select id="experience" name="experience" required>
+            <option value="">--Select--</option>
+            <option value="student">Student</option>
+            <option value="intern">Intern</option>
+            <option value="junior">Junior Analyst</option>
+            <option value="senior">Senior Analyst</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <label for="comments">Why are you interested in cybersecurity?</label><br>
+          <textarea id="comments" name="comments" rows="5" placeholder="Write your interest here..." required></textarea>
+        </div>
       </fieldset>
 
-      <fieldset>
-        <legend>Skills You Have</legend>
-        <label><input type="checkbox" name="skill1" value="Networking" class="progress-input"> Networking</label>
-        <label><input type="checkbox" name="skill2" value="Ethical Hacking" class="progress-input"> Ethical Hacking</label>
-        <label><input type="checkbox" name="skill3" value="Cryptography" class="progress-input"> Cryptography</label>
-        <label><input type="checkbox" name="skill4" value="Malware Analysis" class="progress-input"> Malware Analysis</label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Experience</legend>
-        <label for="experience">Select Experience:</label>
-        <select id="experience" name="experience" required>
-          <option value="">--Select--</option>
-          <option value="Student">Student</option>
-          <option value="Intern">Intern</option>
-          <option value="1-2 Years">1-2 Years</option>
-          <option value="3-5 Years">3-5 Years</option>
-          <option value="5+ Years">5+ Years</option>
-        </select>
-      </fieldset>
-
-      <fieldset>
-        <legend>Comments</legend>
-        <label for="comments">Why do you want to join?</label>
-        <textarea id="comments" name="comments" rows="4" placeholder="Write here..." required></textarea>
-      </fieldset>
-
-      <fieldset>
-        <legend>Form Progress</legend>
-        <label for="progress">Progress:</label>
-        <progress id="progress" value="0" max="100"></progress>
-      </fieldset>
-
-      <div class="button-row">
-        <input type="submit" value="Register">
-        <input type="reset" value="Reset" id="resetBtn">
+      <div class="form-buttons" style="margin-bottom: 20px;">
+        <input type="submit" value="Submit Registration">
+        <input type="reset" value="Reset Form">
       </div>
     </form>
+
+    <p id="successMessage" style="color: green; font-weight: bold; display: none; margin-top: 20px;">
+      ✅ Registered Successfully!
+    </p>
   </div>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+    });
+  </script>
 </body>
 </html>
