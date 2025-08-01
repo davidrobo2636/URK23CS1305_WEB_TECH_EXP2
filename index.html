@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cybersecurity Basics Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Cybersecurity Basics Registration</h1>
+    <form id="registrationForm" action="/serverlogic" method="post">
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autofocus>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required minlength="6">
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="13" max="100" required>
+
+        <label for="website">Portfolio URL:</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com">
+
+        <label for="search">Search Field:</label>
+        <input type="search" id="search" name="search" placeholder="Search your skills" required>
+
+        <label for="fileupload">Upload Resume:</label>
+        <input type="file" id="fileupload" name="fileupload" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Track Selection</legend>
+        <label><input type="radio" name="track" value="Beginner" required class="progress-input"> Beginner</label>
+        <label><input type="radio" name="track" value="Advanced" class="progress-input"> Advanced</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Skills You Have</legend>
+        <label><input type="checkbox" name="skill1" value="Networking" class="progress-input"> Networking</label>
+        <label><input type="checkbox" name="skill2" value="Ethical Hacking" class="progress-input"> Ethical Hacking</label>
+        <label><input type="checkbox" name="skill3" value="Cryptography" class="progress-input"> Cryptography</label>
+        <label><input type="checkbox" name="skill4" value="Malware Analysis" class="progress-input"> Malware Analysis</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Experience</legend>
+        <label for="experience">Select Experience:</label>
+        <select id="experience" name="experience" required>
+          <option value="">--Select--</option>
+          <option value="Student">Student</option>
+          <option value="Intern">Intern</option>
+          <option value="1-2 Years">1-2 Years</option>
+          <option value="3-5 Years">3-5 Years</option>
+          <option value="5+ Years">5+ Years</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Comments</legend>
+        <label for="comments">Why do you want to join?</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Write here..." required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Form Progress</legend>
+        <label for="progress">Progress:</label>
+        <progress id="progress" value="0" max="100"></progress>
+      </fieldset>
+
+      <div class="button-row">
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset" id="resetBtn">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
